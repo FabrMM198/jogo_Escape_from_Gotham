@@ -1,5 +1,6 @@
 const batman = document.querySelector('.batman');
 const bane = document.querySelector('.bane');
+const startMessage = document.querySelector('.start-message');
 const gameOverImage = document.querySelector('.game-over');
 let gameStarted = false;
 let gameOver = false;
@@ -26,6 +27,7 @@ const jump = () => {
 const startGame = () => {
     gameStarted = false;
     gameOver = false;
+    startMessage.hidden = true;
     gameOverImage.hidden = true;
     batman.classList.remove('jump');
 
@@ -71,6 +73,8 @@ const loop = setInterval(() => {
         bane.style.animationPlayState = 'paused';
         batman.classList.remove('jump');
         gameOverImage.hidden = false;
+        startMessage.textContent = 'Aperte B para reiniciar';
+        startMessage.hidden = false;
     }
 }, 10);
 
