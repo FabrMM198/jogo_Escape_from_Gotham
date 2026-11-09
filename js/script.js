@@ -1,5 +1,6 @@
 const batman = document.querySelector('.batman');
 const bane = document.querySelector('.bane');
+const gameBoard = document.querySelector('.game-board');
 const startMessage = document.querySelector('.start-message');
 const gameOverImage = document.querySelector('.game-over');
 let gameStarted = false;
@@ -44,6 +45,19 @@ batman.addEventListener('animationend', () => {
     batman.classList.remove('jump');
 });
 
+gameBoard.addEventListener('pointerdown', (event) => {
+    if (!event.isPrimary || event.button !== 0) {
+        return;
+    }
+
+    if (!gameStarted) {
+        startGame();
+        return;
+    }
+
+    jump();
+});
+
 const loop = setInterval(() => {
     if (!gameStarted) {
         return;
@@ -73,7 +87,7 @@ const loop = setInterval(() => {
         bane.style.animationPlayState = 'paused';
         batman.classList.remove('jump');
         gameOverImage.hidden = false;
-        startMessage.textContent = 'Aperte B para reiniciar';
+        startMessage.textContent = 'Aperte B ou toque para reiniciar';
         startMessage.hidden = false;
     }
 }, 10);
