@@ -6,18 +6,21 @@
 
 .game-board {
     width: 90%;
-    height: 500px;
+    height: 600px;
     border: 1px solid #000;
     margin: 0 auto;
     position: relative;
     overflow: hidden;
-
+    background-image: url('../assets/img/cenario.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .bane {
     position: absolute;
     bottom: 0;
-    height: 300px;
+    height: 280px;
     width: 200px;
     animation: pipe-animation 3s linear infinite;
 }
@@ -30,7 +33,7 @@
 }
 
 .jump {
-    animation: jump-animation 1s ease-out;
+    animation: jump-animation 1.8s ease-out;
 }
 
 @keyframes pipe-animation {
@@ -46,20 +49,9 @@
     0% {
         bottom: 0;
     }
-    30% {
-        bottom: 300px;
-    }
-    40% {
-        bottom: 300px;
-    }
-    50% {
-        bottom: 300px;
-    }
-    60% {
-        bottom: 300px;
-    }
-    70% {
-        bottom: 300px;
+    10%,
+    90% {
+        bottom: 350px;
     }
     100% {
         bottom: 0;
