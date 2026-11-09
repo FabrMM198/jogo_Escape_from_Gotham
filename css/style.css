@@ -23,6 +23,7 @@
     height: 280px;
     width: 200px;
     animation: pipe-animation 3s linear infinite;
+    animation-play-state: paused;
 }
 
 .batman {
