@@ -32,6 +32,16 @@
     
 }
 
+.game-over {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    width: min(80%, 400px);
+    height: auto;
+    transform: translate(-50%, -50%);
+}
+
 .jump {
     animation: jump-animation 1.8s ease-out;
 }
